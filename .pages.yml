@@ -10,7 +10,7 @@ content:
     path: data/menu
     format: json
     view:
-      fields: [image, name, description, price, category]
+      fields: [image, name, description, price, badge, category]
     fields:
       - { name: name, label: "Nama Menu", type: string, required: true }
       - { name: description, label: "Deskripsi", type: string }
