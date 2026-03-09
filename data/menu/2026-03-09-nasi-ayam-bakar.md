@@ -5,5 +5,5 @@
   "image": "/assets/menu/nasi-ayam-bakar.jpg",
   "category": "makanan",
   "badge": "Best Seller",
-  "popular": false
+  "popular": true
 }
