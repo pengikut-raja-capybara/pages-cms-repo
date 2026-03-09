@@ -1,24 +1,31 @@
 media:
   input: public/assets/menu
   output: /assets/menu
+  categories: ["image"]
 
 content:
   - name: menu_kuliner
     label: "Warung Raja Capybara"
     type: collection
-    folder: data/menu
-    extension: json
+    path: data/menu
     format: json
     view:
       fields: [image, name, price]
     fields:
       - { name: name, label: "Nama Menu", type: string, required: true }
-      - { name: description, label: "Deskripsi", type: text }
+      - { name: description, label: "Deskripsi", type: string }
       - { name: price, label: "Harga", type: string }
-      - { name: image, label: "Foto", type: image }
-      - name: category
-        label: "Kategori"
-        type: select
-        options: ["Makanan", "Minuman", "Snack", "Paket"] # Pastikan pakai kurung siku []
-      - { name: badge, label: "Badge", type: string }
-      - { name: popular, label: "Populer?", type: boolean }
+      - { name: image, label: "Foto Utama", type: image }
+      - { name: category, label: "Kategori", type: string } # Pakai string biasa agar aman dari error map
+      - { name: badge, label: "Badge (Best Seller/Promo)", type: string }
+      - { name: popular, label: "Tampilkan di Populer?", type: boolean }
+      
+      # Mengikuti struktur 'object' yang kamu berikan tadi
+      - name: metadata
+        label: "Info Tambahan"
+        type: object
+        fields:
+          - { name: created_at, label: "Tanggal Input", type: date, options: { time: true, format: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" } }
+          - { name: created_by, label: "Admin", type: string }
+      
+      - { name: body, label: "Detail Tambahan/Catatan", type: rich-text }
