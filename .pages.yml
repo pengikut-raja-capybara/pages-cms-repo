@@ -1,0 +1,43 @@
+# .pages.yml
+media:
+  input: public/assets/menu
+  output: /assets/menu
+
+content:
+  - name: menu_kuliner
+    label: "Menu Warung Raja Capybara"
+    folder: data/menu
+    extension: json
+    format: json
+    slug: "{{name}}"
+    fields:
+      - name: name
+        label: "Nama Menu"
+        type: string
+        
+      - name: description
+        label: "Deskripsi"
+        type: text
+        
+      - name: price
+        label: "Harga (Contoh: Rp 28.000)"
+        type: string
+        
+      - name: image
+        label: "Foto Makanan/Minuman"
+        type: image
+        
+      - name: category
+        label: "Kategori"
+        type: select
+        options: ["Makanan", "Minuman", "Snack", "Paket"]
+        
+      - name: badge
+        label: "Label (Opsional)"
+        type: string
+        description: "Contoh: Best Seller, Promo, New"
+        
+      - name: popular
+        label: "Menu Populer?"
+        type: boolean
+        default: false
