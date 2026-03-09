@@ -16,7 +16,7 @@ content:
       - { name: description, label: "Deskripsi", type: string }
       - { name: price, label: "Harga", type: string }
       - { name: image, label: "Foto Utama", type: image }
-      - { name: category, label: "Kategori", type: string } # Pakai string biasa agar aman dari error map
-      - { name: badge, label: "Badge (Best Seller/Promo)", type: string }
+      - { name: category, label: "Kategori", type: string }
+      - { name: badge, label: "Badge (Best Seller/Promo)", type: select, options: { values: [ Best Seller, Promo ]} }
       - { name: popular, label: "Tampilkan di Populer?", type: boolean }
       - { name: body, label: "Detail Tambahan/Catatan", type: rich-text }
