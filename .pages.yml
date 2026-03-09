@@ -5,18 +5,20 @@ media:
 content:
   - name: menu_kuliner
     label: "Warung Raja Capybara"
-    type: collection # Menegaskan ini kumpulan data
+    type: collection
     folder: data/menu
     extension: json
     format: json
-    # Ini supaya di daftar menu CMS muncul foto kecil dan harganya
     view:
-      fields: [image, name, price] 
+      fields: [image, name, price]
     fields:
       - { name: name, label: "Nama Menu", type: string, required: true }
       - { name: description, label: "Deskripsi", type: text }
       - { name: price, label: "Harga", type: string }
       - { name: image, label: "Foto", type: image }
-      - { name: category, label: "Kategori", type: select, options: ["Makanan", "Minuman", "Snack", "Paket"] }
-      - { name: badge, label: "Badge (Best Seller/Promo)", type: string }
-      - { name: popular, label: "Tampilkan di Populer?", type: boolean }
+      - name: category
+        label: "Kategori"
+        type: select
+        options: ["Makanan", "Minuman", "Snack", "Paket"] # Pastikan pakai kurung siku []
+      - { name: badge, label: "Badge", type: string }
+      - { name: popular, label: "Populer?", type: boolean }
