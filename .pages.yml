@@ -1,43 +1,22 @@
-# .pages.yml
 media:
   input: public/assets/menu
   output: /assets/menu
 
 content:
   - name: menu_kuliner
-    label: "Menu Warung Raja Capybara"
+    label: "Warung Raja Capybara"
+    type: collection # Menegaskan ini kumpulan data
     folder: data/menu
     extension: json
     format: json
-    slug: "{{name}}"
+    # Ini supaya di daftar menu CMS muncul foto kecil dan harganya
+    view:
+      fields: [image, name, price] 
     fields:
-      - name: name
-        label: "Nama Menu"
-        type: string
-        
-      - name: description
-        label: "Deskripsi"
-        type: text
-        
-      - name: price
-        label: "Harga (Contoh: Rp 28.000)"
-        type: string
-        
-      - name: image
-        label: "Foto Makanan/Minuman"
-        type: image
-        
-      - name: category
-        label: "Kategori"
-        type: select
-        options: ["Makanan", "Minuman", "Snack", "Paket"]
-        
-      - name: badge
-        label: "Label (Opsional)"
-        type: string
-        description: "Contoh: Best Seller, Promo, New"
-        
-      - name: popular
-        label: "Menu Populer?"
-        type: boolean
-        default: false
+      - { name: name, label: "Nama Menu", type: string, required: true }
+      - { name: description, label: "Deskripsi", type: text }
+      - { name: price, label: "Harga", type: string }
+      - { name: image, label: "Foto", type: image }
+      - { name: category, label: "Kategori", type: select, options: ["Makanan", "Minuman", "Snack", "Paket"] }
+      - { name: badge, label: "Badge (Best Seller/Promo)", type: string }
+      - { name: popular, label: "Tampilkan di Populer?", type: boolean }
